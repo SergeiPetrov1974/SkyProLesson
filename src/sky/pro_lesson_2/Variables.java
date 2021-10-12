@@ -2,8 +2,19 @@ package sky.pro_lesson_2;
 
 public class Variables {
     public static void main(String[] args) {
+        //new Task2(78.2, 82.7).start();
+        //new Task3(5, 200, 2, 4).start();
+        //new Task4(7, 250, 500).start();
+        //new Task5("Маша", 67760).start();
+        //new Task5("Денис", 83690).start();
+        //new Task5("Кристина", 76230).start();
+        //new Task6(12, 27, 44, 15, 9).start();
+        //new Task7(5, 7).start();
+        //new Task8(396).start();
 
+        /*
         System.out.println(" Задача №1 ");
+
         //Объявите переменные всех типов, что мы изучили на уроке, и присвойте им любые значения (инициализируйте их).
 
         // Тип переменных целочисленные
@@ -57,6 +68,7 @@ public class Variables {
           Подсчитайте и выведите в консоль разницу между весами бойцов.
 
          */
+        /*
         double weightBoxerOne = 78.2;
         double weightBoxerTwo = 82.7;
         double totalWeight = weightBoxerOne + weightBoxerTwo;
@@ -74,6 +86,7 @@ public class Variables {
              Подсчитайте вес (количество грамм) такого спорт-завтрака, а затем переведите его в килограммы.
              Результат напечатайте в консоль.
          */
+         /*
         int banana = 5 * 80;
         int milk = (int) (1.050 * 100) * 2;
         int iceCream = 2 * 100;
@@ -89,6 +102,7 @@ public class Variables {
         Посчитайте, сколько может потребоваться дней в среднем, чтобы добиться результата похудения.
         Результаты подсчетов выведите в консоль.
          */
+        /*
         int weight = 7 * 1000;
         int loseWeightOne = 250;
         int loseWeightTwo = 500;
@@ -111,6 +125,7 @@ public class Variables {
         Выведите в консоль информацию по каждому сотруднику.
         Например, “Маша теперь получает **** рублей. Годовой доход вырос на **** рублей”.
          */
+        /*
         int firstEmployeeSalary = 67760;
         int firstFormulaPercentage = firstEmployeeSalary + (firstEmployeeSalary * 10) / 100;
         int firstTotalSalaryYear = firstEmployeeSalary * 12;
@@ -140,6 +155,7 @@ public class Variables {
         преобразовав его в вариант с противоположным значением (отрицательное -> положительное, положительное -> отрицательное).
         Выведите (напечатайте) результат в консоль.
          */
+        /*
         int a = 12;
         int b = 27;
         int c = 44;
@@ -156,6 +172,7 @@ public class Variables {
          Использовать дополнительные переменные или числа запрещено.
 
          */
+        /*
         int box_a = 5;
         int box_b = 7;
         System.out.println(box_a + " " + box_b);
@@ -176,8 +193,12 @@ public class Variables {
         Это значит, что рассчитать в голове сумму, которую необходимо вычесть или прибавить к *a* для корректного значения в *b* нельзя,
         так как при каждом изменении значения в *a* её нужно пересчитывать.
          */
+        /*
         int n = 396;
         System.out.print((n % 100 - n % 10) / 10);
+
+         */
+
 
     }
 }
