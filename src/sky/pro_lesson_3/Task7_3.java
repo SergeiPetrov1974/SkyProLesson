@@ -38,9 +38,8 @@ public class Task7_3 {
     }
 
     private double calculationCredit() {
-        int paymentMonth;
         double percentMonth = (percent / data / 100);
-        return paymentMonth = (int) (wantedSum * (percentMonth * Math.pow((1 + percentMonth), data)) / (Math.pow((1 + percentMonth), data) - 1));
+        return (int) (wantedSum * (percentMonth * Math.pow((1 + percentMonth), data)) / (Math.pow((1 + percentMonth), data) - 1));
     }
 
     private void calculationRules() {
