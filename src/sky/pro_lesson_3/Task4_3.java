@@ -37,5 +37,4 @@ public class Task4_3 {
             System.out.println("Доставки в указаных пределах: " + deliveryDistance + " км. Нет.");
         }
     }
-
 }
