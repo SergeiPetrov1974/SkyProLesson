@@ -10,6 +10,7 @@ public class Main {
         book.aboutBook();
         book.setNewSurname("Sokolov");
         book.setPublicationYear(1987);
+        book.toString();
         book.aboutBook();
 
     }
