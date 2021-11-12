@@ -1,13 +1,14 @@
 package sky.pro_coursework;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Company {
     private String nameCompany;
-    private ArrayList<Department> listDepartment = new ArrayList<>();
+    private List<Department> listDepartment = new ArrayList<>();
     private int count;
-    private double min = 0;
-    private double max = 0;
+    private int newSalary;
+
 
     public Company(String nameCompany) {
         this.nameCompany = nameCompany;
@@ -20,61 +21,89 @@ public class Company {
 
     public void totalSalary() {
         int total = 0;
-        for (int i = 0; i < count; i++) {
+        for (int i = 0; i < listDepartment.size(); i++) {
             total += listDepartment.get(i).getTotalSalary();
         }
         System.out.println("Сумма затрат на зарплаты в месяц: " + total + " рублей.");
     }
 
     public void averageSalary() {
-        double average = 0;
         double totalSum = 0;
         for (Department department : listDepartment) {
             totalSum += department.getAverageSalary();
-            average = totalSum / count;
         }
+
+        double average = totalSum / count;
         System.out.println("Средняя зарплата: " + average + " рублей.");
     }
 
+
     public void minSalary() {
-        double minSalary = Double.POSITIVE_INFINITY;
+        int minSal = 0;
+        String string = null;
         for (Department department : listDepartment) {
-            if (minSalary > department.getMinSalary()) {
-                minSalary = department.getMinSalary();
-                min = minSalary;
+            minSal = department.getMinSalary().getSalary();
+        }
+        for (Department department : listDepartment) {
+            if (department.getMinSalary().getSalary() < minSal) {
+                string = department.getMinSalary().getInfoEmployee();
             }
         }
-        //System.out.println("Минимальная зарплата: " + minSalary + " рублей.");
+        System.out.println("Сотрудник с минимальной зарплатой: " + string);
     }
+
 
     public void maxSalary() {
-        double maxSalary = Double.NEGATIVE_INFINITY;
+        int maxS = 0;
+        String string = null;
         for (Department department : listDepartment) {
-            if (maxSalary < department.getMaxSalary()) {
-                maxSalary = department.getMaxSalary();
-                max = maxSalary;
+            maxS = department.getMaxSalary().getSalary();
+        }
+        for (Department department : listDepartment) {
+            if (department.getMaxSalary().getSalary() > maxS) {
+                string = department.getMaxSalary().getInfoEmployee();
             }
         }
-        //System.out.println("Максимальная зарплата: " + maxSalary + " рублей.");
+        System.out.println("Сотрудник с максимальной зарплатой: " + string);
     }
 
-    public void showEmployeeMinSalary() {
+
+    public void minSalaryEmployeeByDepart() {
         for (Department department : listDepartment) {
-            department.filterMinValue(min);
+            System.out.println("Сотрудники с минимальной зарплатой в отделах: " + department.getMinSalary().getInfoEmployee());
         }
     }
 
-    public void showEmployeeMaxSalary() {
+    public void maxSalaryEmployeeByDepart() {
         for (Department department : listDepartment) {
-            department.filterMaxValue(max);
+            System.out.println("Сотрудники с максимальной зарплатой отделах: " + department.getMaxSalary().getInfoEmployee());
         }
     }
-/*
+
+    public void calculateNetSalary(Department departments, double percentage) {
+        for (int i = 0; i < departments.size(); i++) {
+            newSalary = listDepartment.get(i).getCalculateNetSalary(percentage);
+            listDepartment.get(i).employee.setSalary(newSalary);
+            listDepartment.get(i).getInfoDepartment();
+        }
+    }
+
     public void info() {
         System.out.println(" Название компании '" + nameCompany + "'");
         for (Department department : listDepartment) {
-            department.infoDepartment();
+            department.getInfoDepartment();
         }
     }
- */
+
+    public void nameEmployee() {
+        for (Department department : listDepartment) {
+            department.getListNameEmployee();
+        }
+    }
+
+    public void searchByName(String name) {
+        for (Department department : listDepartment) {
+            System.out.println(department.searchByName(name));
+        }
+    }
 }

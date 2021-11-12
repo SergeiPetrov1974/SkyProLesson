@@ -33,36 +33,57 @@ package sky.pro_coursework;
 public class Main {
     public static void main(String[] args) {
         Department department1 = new Department("Высоких технологий");
-        department1.addEmployee("Иванов Иван Иванович", 10);
-        department1.infoDepartment();
-        System.out.println("=====================================================");
+        department1.addEmployee("Конкина Ирина Ириновна", 10);
+        department1.addEmployee("Невенченный Армен Арменович ", 7);
+        department1.addEmployee("Азаров Илья Ильич", 12);
+        department1.addEmployee("Дубовик Евгений Евгеньевич", 2);
+        //department1.infoDepartment();
+        //System.out.println("=====================================================");
         Department department2 = new Department("Средних технологий");
         department2.addEmployee("Петров Петр Петрович", 3000);
         department2.addEmployee("Сидоров Сидор Сидорович", 200);
         department2.addEmployee("Сидоров Сидор Сидорович", 4);
-        department2.infoDepartment();
-        System.out.println("=====================================================");
+        //department2.infoDepartment();
+        //System.out.println("=====================================================");
         Department department3 = new Department("Низких технологий");
         department3.addEmployee("Голубев Георгий Иванович", 700);
         department3.addEmployee("Космос Гавриил Пакович", 300);
-        department3.addEmployee("Ли Вьет Кумарович", 800);
-        department3.infoDepartment();
-        System.out.println("=====================================================");
-        System.out.println("=====================================================");
+        department3.addEmployee("Ли Вьет Вьетович", 800);
+        //department3.infoDepartment();
+        //System.out.println("=====================================================");
+        //System.out.println("=====================================================");
 
         Company company = new Company("ООО Галактические технологии");
         company.addDepartment(department1);
         company.addDepartment(department2);
         company.addDepartment(department3);
-        //company.info();
+
+        System.out.println("Список всех сотрудников без данных: ");
+        company.nameEmployee();
+        System.out.println("=====================================================");
+
+        System.out.println("Список всех сотрудников с данными: ");
+        company.info();
+        System.out.println("=====================================================");
+
+        System.out.println(" Расходы в месяц и средняя зарплата");
         company.totalSalary();
         company.averageSalary();
+        System.out.println("=====================================================");
+
+        System.out.println(" Минимальная и максимальная зарплата");
         company.minSalary();
+        System.out.println("=====================================================");
         company.maxSalary();
         System.out.println("=====================================================");
-        company.showEmployeeMinSalary();
+        company.minSalaryEmployeeByDepart();
         System.out.println("=====================================================");
-        company.showEmployeeMaxSalary();
+        company.maxSalaryEmployeeByDepart();
         System.out.println("=====================================================");
+        System.out.println(" Поиск по Ф.И.О");
+        company.searchByName("Вьет");
+        System.out.println("=====================================================");
+        System.out.println("Увеличить зарплату по отделу и процент");
+        //company.calculateNetSalary(department1, 10);
     }
 }
