@@ -84,6 +84,6 @@ public class Main {
         company.searchByName("Вьет");
         System.out.println("=====================================================");
         System.out.println("Увеличить зарплату по отделу и процент");
-        //company.calculateNetSalary(department1, 10);
+        company.calculateNetSalary(department1, 10);
     }
 }
