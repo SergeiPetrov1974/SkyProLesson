@@ -80,11 +80,11 @@ public class Company {
         }
     }
 
-    public void calculateNetSalary(Department departments, double percentage) {
-        for (int i = 0; i < departments.size(); i++) {
-            newSalary = listDepartment.get(i).getCalculateNetSalary(percentage);
-            listDepartment.get(i).employee.setSalary(newSalary);
-            listDepartment.get(i).getInfoDepartment();
+    public void calculateNetSalary(Department department, int percentage) {
+        Department[] departmentEmployee = getCurrentDepartmentEmployee(department);
+        for (int i = 0; i < listDepartment.size(); i++) {
+            //Department basicSalary = listDepartment.get(i).getSalary();
+            listDepartment.get(i).setNewSalary(1 + percentage / 100);
         }
     }
 
@@ -105,5 +105,15 @@ public class Company {
         for (Department department : listDepartment) {
             System.out.println(department.searchByName(name));
         }
+    }
+
+    private Department[] getCurrentDepartmentEmployee(Department departmentId) {
+        Department[] departmentEmployee = new Department[10];
+        for (int i = 0; i < listDepartment.size(); i++) {
+            if (listDepartment.get(i).equals(departmentId)) {
+                //departmentEmployee[i] = listDepartment.get(i).getSalary();
+            }
+        }
+        return departmentEmployee;
     }
 }

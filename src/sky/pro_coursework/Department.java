@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Department {
-    Employee employee;
+    private Employee employee;
     private static int count = 0;
     private List<Employee> listEmployees = new ArrayList<>();
     private String nameDepartment;
@@ -89,17 +89,8 @@ public class Department {
         return "";
     }
 
-    public int getCalculateNetSalary(double percentage) {
-        for (Employee listEmployee : listEmployees) {
-            double amount = listEmployee.getSalary() * (percentage / 100);
-            newSalary = (int) (listEmployee.getSalary() + amount);
-            return newSalary;
 
-        }
-        return 0;
-    }
-
-    public int size() {
+    public int getSize() {
         return listEmployees.size();
     }
 
@@ -108,23 +99,13 @@ public class Department {
         return listEmployees.size();
     }
 
+
+    public void setNewSalary(int newSalary) {
+        this.newSalary = newSalary;
+    }
+
     public int getSalary() {
         return listEmployees.size();
     }
-
-/*
-    public int getAllSalary() {
-        int allSalary = 0;
-        for (int i = 0; i < listEmployees.size(); i++) {
-            allSalary = listEmployees.get(i).getSalary();
-            System.out.println(allSalary);
-        }
-        return allSalary;
-    }
-
-
-
-
- */
 }
 
