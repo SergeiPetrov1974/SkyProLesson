@@ -1,22 +1,12 @@
 package sky.pro_lesson_2_2;
 
-public class Bicycle extends Vehicle implements ServiceStation {
-
+public class Bicycle extends Vehicle {
     public Bicycle(String modelName, int wheelsCount) {
         super(modelName, wheelsCount);
     }
 
-    public void updateTyre() {
-        System.out.println("У велосипеда " + getModelName() + " меняем покрышки " + getWheelsCount() + " шт.");
+    public Bicycle(String modelName) {
+        super(modelName, 2);
     }
 
-    @Override
-    public void checkEngine() {
-
-    }
-
-    @Override
-    public void checkTrailer() {
-
-    }
 }
